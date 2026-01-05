@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paul Velasco - Web Designer focused on UI/UX, front-end development and website optimization for real clients">
+    <meta name="keywords" content="Paul Velasco, Web Designer, Frontend Developer, UI/UX, Website Maintenance">
+    <meta name="author" content="Paul Velasco">
+    <meta property="og:title" content="Paul Velasco | Portfolio">
+    <meta property="og:description" content="Frontend Web Designer focused on UI/UX and real client websites">
+    <title>Paul Velasco | Frontend Web Designer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <div class="noise-overlay"></div>
+
+    <header id="header">
+        <div class="logo"> 
+            <a href="#home" class="logo-text">PV<span class="dot">.</span></a>
+            </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#home" class="nav-link active">HOME</a></li>
+                <li><a href="#projects" class="nav-link">WORK</a></li>
+                <li><a href="#skills" class="nav-link">STACK</a></li>
+                <li><a href="#about" class="nav-link">ABOUT</a></li>
+                <li><a href="#contact" class="nav-link btn-nav">LET'S TALK</a></li>
+            </ul>
+        </nav>
+        
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+
+    <main id="home" class="hero">
+        <div class="glow-bg glow-top-right"></div>
+        
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="badge-greeting">
+                    <span class="wave">👋</span> Hello World, I'm
+                </div>
+                
+                <h1 class="hero-title">
+                    Paul <span class="text-gradient">Velasco</span>
+                </h1>
+                
+                <div class="typewriter-container">
+                    <span class="code-symbol">&lt;</span>
+                    <span class="typewriter-text" id="typewriter"></span>
+                    <span class="code-symbol">/&gt;</span>
+                </div>
+                
+                <p class="description">
+                    Building clean, responsive and user-centered web interfaces using modern frontend technologies.
+                </p>
+
+                <div class="buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="files/CV-Paul-Velasco.pdf" download="CV Paul Velasco" class="btn btn-outline">Download CV <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="image-wrapper tilt-element">
+                    <img src="foto-de-perfil.png" alt="Paul Velasco" class="avatar-image"> <div class="visual-card floating-card-1">
+                        <span>&lt;UI/UX</span>
+                        <div class="mini-bar"></div>
+                    </div>
+                    <div class="visual-card floating-card-2">
+                        <span>&lt;FRONTEND/&gt;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="mouse"></div>
+        </div>
+    </main>
+
+    <section id="projects" class="section projects-section">
+        <div class="glow-bg glow-center-left"></div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">PORTFOLIO</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+            
+            <div class="projects-grid">
+                <article class="project-card tilt-element">
+                    <div class="card-inner">
+                        <div class="card-image">
+                            <img src="project1.jpg" alt="Project Preview" onerror="this.src='#'">
+                            <div class="card-overlay">
+                                <a href="https://github.com/DevPaulVelasco/kungfu-demo" class="btn-icon" aria-label="View Code">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6"></path><path d="M8 6l-6 6 6 6"></path></svg>
+                                </a>
+                                <a href="#" class="btn-icon" aria-label="Live Demo">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Local Auto Parts Business Website</h3>
+                            <p>Responsive business website designed to showcase products and improve customer contact.</p>
+                            <div class="tags">
+                                <span>HTML5</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card tilt-element">
+                    <div class="card-inner">
+                        <div class="card-image">
+                            <img src="project2.jpg" alt="Project Preview" onerror="this.src='#'">
+                            <div class="card-overlay">
+                                <a href="#" class="btn-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6"></path><path d="M8 6l-6 6 6 6"></path></svg></a>
+                                <a href="#" class="btn-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Veterinary Clinic Website</h3>
+                            <p>Service-oriented website focused on clarity, mobile usability and client inquiries.</p>
+                            <div class="tags">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card tilt-element">
+                    <div class="card-inner">
+                        <div class="card-image">
+                            <img src="project3.png" alt="Project Preview" onerror="this.src='#'">
+                            <div class="card-overlay">
+                                <a href="#" class="btn-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6"></path><path d="M8 6l-6 6 6 6"></path></svg></a>
+                                <a href="#" class="btn-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Personal Portfolio Website</h3>
+                            <p>Custom-built portfolio focused on performance, animations and modern UI.</p>
+                            <div class="tags">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section skills-section">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-subtitle">EXPERTISE</span>
+                <h2 class="section-title">Tech Stack</h2>
+            </div>
+
+            <div class="skills-wrapper">
+                <div class="skills-category">
+                    <h3>Frontend</h3>
+                    <div class="skills-grid">
+                        <div class="skill-pill"><img src="icons/html.png" alt="HTML" onerror="this.style.display='none'"> <span>HTML5</span></div>
+                        <div class="skill-pill"><img src="icons/css.png" alt="CSS" onerror="this.style.display='none'"> <span>CSS3</span></div>
+                        <div class="skill-pill"><img src="icons/js.png" alt="JS" onerror="this.style.display='none'"> <span>JavaScript</span></div>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3>Backend & Tools</h3>
+                    <div class="skills-grid">
+                        <div class="skill-pill"><img src="icons/python.png" alt="Python" onerror="this.style.display='none'"> <span>Python (Academic)</span></div>
+                        <div class="skill-pill"><img src="icons/github.png" alt="Git" onerror="this.style.display='none'"> <span>Git/GitHub</span></div>
+                        <div class="skill-pill"><img src="icons/sql.png" alt="Git" onerror="this.style.display='none'"> <span>SQL</span></div>
+                        <div class="skill-pill"><img src="icons/wordpress.png" alt="Git" onerror="this.style.display='none'"> <span>WordPress</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section about-section">
+        <div class="glow-bg glow-bottom-right"></div>
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text-content">
+                    <span class="section-subtitle">WHO I AM</span>
+                    <h2 class="section-title">About Me</h2>
+                    <p class="highlight-text">
+                        Frontend-focused Software Engineering student with a strong interest in UI/UX and real-world web projects.
+                    </p>
+                    <p>
+                        My goal is simple: write clean code that solves real business problems while looking amazing.
+                    </p>
+                    
+                    <div class="education-timeline">
+                        <div class="timeline-item">
+                            <span class="year">2024 - Present</span>
+                            <div class="content">
+                                <h4>Software Engineering</h4>
+                                <p>Polytechnic University of Chiapas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-stats">
+                    <div class="stat-box">
+                        <span class="number">3+</span>
+                        <span class="label">Real Projects</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="number">1+</span>
+                        <span class="label">Years Coding</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="number">100%</span>
+                        <span class="label">Client Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2 class="contact-big-text">Let's work<br>together.</h2>
+                    <p>Have a project in mind? Drop me a line.</p>
+                    
+                    <div class="contact-links">
+                        <a href="mailto:zyropex@gmail.com" class="contact-link-item">
+                            <span class="icon">✉️</span> zyropex@gmail.com
+                        </a>
+                        <a href="https://maps.app.goo.gl/4txj7kbmqdtvLvyS7" class="contact-link-item">
+                            <span class="icon">📍</span> Chiapas, México
+                        </a>
+                    </div>
+                    
+                    <div class="socials">
+                        <a href="https://www.linkedin.com/in/paul-velasco-95843b379/" class="social-btn">LinkedIn</a>
+                        <a href="https://github.com/DevPaulVelasco" class="social-btn">GitHub</a>
+                        <a href="https://www.instagram.com/hellopaul.dev" class="social-btn">Instagram</a>
+                    </div>
+                </div>
+
+                <div class="contact-form-container glass-panel">
+                    <form action="https://formsubmit.co/devpaulvelasco@gmail.com" method="POST" id="contactForm">
+                        
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://paulvelasco.github.io/"> 
+                        <input type="hidden" name="_subject" value="Nuevo contacto desde Portfolio!">
+                        <input type="text" name="_honey" style="display:none">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_autoresponse" value="Thanks for reaching out! I’ll get back to you shortly.">
+
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Leily Due" required>
+                            <span class="focus-border"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Sample@example.com" required>
+                            <span class="focus-border"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell me about your project..." required></textarea>
+                            <span class="focus-border"></span>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-submit">
+                            Send Message <span class="arrow">→</span>
+                        </button>
+                        
+                        <div class="form-status"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© <span id="year"></span> Paul Velasco</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
