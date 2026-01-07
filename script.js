@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     
+    // --- DETECCIÓN DE DISPOSITIVO MÓVIL/TÁCTIL ---
+    const isMobile = window.matchMedia("(pointer: coarse)").matches || window.innerWidth <= 768;
+
     // 1. TYPEWRITER EFFECT
     const typeWriterElement = document.getElementById('typewriter');
     const phrases = ['Software Engineer', 'Frontend Specialist', 'UI/UX Designer', 'Web Developer'];
@@ -9,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let typeSpeed = 100;
 
     function type() {
+        if (!typeWriterElement) return;
+
         const currentPhrase = phrases[phraseIndex];
         
         if (isDeleting) {
@@ -34,57 +39,65 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     type();
 
-    // 2. CUSTOM CURSOR
+    // 2. CUSTOM CURSOR (Solo Desktop)
     const cursorDot = document.querySelector('[data-cursor-dot]');
     const cursorOutline = document.querySelector('[data-cursor-outline]');
 
     if (cursorDot && cursorOutline) {
-        window.addEventListener('mousemove', (e) => {
-            const posX = e.clientX;
-            const posY = e.clientY;
+        if (isMobile) {
+            cursorDot.style.display = 'none';
+            cursorOutline.style.display = 'none';
+        } else {
+            window.addEventListener('mousemove', (e) => {
+                const posX = e.clientX;
+                const posY = e.clientY;
 
-            cursorDot.style.left = `${posX}px`;
-            cursorDot.style.top = `${posY}px`;
+                cursorDot.style.left = `${posX}px`;
+                cursorDot.style.top = `${posY}px`;
 
-            cursorOutline.animate({
-                left: `${posX}px`,
-                top: `${posY}px`
-            }, { duration: 500, fill: "forwards" });
-        });
+                cursorOutline.animate({
+                    left: `${posX}px`,
+                    top: `${posY}px`
+                }, { duration: 500, fill: "forwards" });
+            });
+        }
     }
 
-    // 3. TILT EFFECT FOR CARDS (3D Hover)
+    // 3. TILT EFFECT FOR CARDS (Solo Desktop)
     const tiltElements = document.querySelectorAll('.tilt-element');
     
-    tiltElements.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            
-            const xRotation = -1 * ((y - rect.height / 2) / rect.height * 20);
-            const yRotation = (x - rect.width / 2) / rect.width * 20;
+    if (!isMobile) {
+        tiltElements.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const xRotation = -1 * ((y - rect.height / 2) / rect.height * 20);
+                const yRotation = (x - rect.width / 2) / rect.width * 20;
 
-            card.style.transform = `perspective(1000px) rotateX(${xRotation}deg) rotateY(${yRotation}deg) scale(1.02)`;
-        });
+                card.style.transform = `perspective(1000px) rotateX(${xRotation}deg) rotateY(${yRotation}deg) scale(1.02)`;
+            });
 
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+            });
         });
-    });
+    }
 
     // 4. HEADER SCROLL EFFECT
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => {
-        if(window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+        if (header) {
+            if(window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
         }
     });
 
-    // 5. MOBILE MENU & ACTIVE LINK FIX (CLICK)
+    // 5. MOBILE MENU
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -105,8 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    
-    // 6. FORM SUBMISSION
+    // 6. FORM SUBMISSION (Corregido para FormSubmit con JSON)
     const form = document.getElementById('contactForm');
     
     if (form) {
@@ -116,19 +128,22 @@ document.addEventListener('DOMContentLoaded', () => {
             const btn = form.querySelector('.btn-submit');
             const originalText = btn.innerHTML;
             
-            
             btn.innerHTML = 'Sending...';
             btn.style.opacity = '0.7';
             btn.disabled = true;
 
             try {
                 const formData = new FormData(form);
+                const object = Object.fromEntries(formData.entries());
+                const json = JSON.stringify(object);
+
                 const response = await fetch(form.action, {
-                    method: form.method,
-                    body: formData,
+                    method: "POST",
                     headers: {
-                        'Accept': 'application/json'
-                    }
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: json
                 });
 
                 if (response.ok) {
@@ -137,17 +152,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     btn.style.color = 'white';
                     form.reset(); 
                 } else {
-                    throw new Error('Error en el servidor');
+                    throw new Error('Server Error');
                 }
 
             } catch (error) {
-                
                 console.error('Error:', error);
                 btn.innerHTML = 'Error. Try again.';
                 btn.style.backgroundColor = '#f50029ff';
                 btn.style.color = 'white';
             } finally {
-                
                 setTimeout(() => {
                     btn.innerHTML = originalText;
                     btn.style.backgroundColor = '';
