@@ -1,7 +1,4 @@
-/* ============================================
-   VARIABLES & RESET
-   ============================================ */
-   :root {
+:root {
     --bg-color: #0a0a0a;
     --bg-secondary: #111111;
     --primary: #ef233c;
@@ -23,7 +20,7 @@
 
 html {
     scroll-behavior: smooth;
-    cursor: none; /* Hide default cursor for custom one */
+    cursor: none;
 }
 
 body {
@@ -34,7 +31,6 @@ body {
     line-height: 1.6;
 }
 
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -49,7 +45,6 @@ body {
     background: var(--primary);
 }
 
-/* Noise Overlay */
 .noise-overlay {
     position: fixed;
     top: 0;
@@ -62,9 +57,6 @@ body {
     z-index: 9999;
 }
 
-/* ============================================
-   CUSTOM CURSOR
-   ============================================ */
 .cursor-dot,
 .cursor-outline {
     position: fixed;
@@ -93,9 +85,6 @@ body:hover .cursor-outline {
     background-color: rgba(255, 255, 255, 0.05);
 }
 
-/* ============================================
-   HEADER
-   ============================================ */
 header {
     display: flex;
     justify-content: space-between;
@@ -171,13 +160,12 @@ header.scrolled {
     color: var(--text-main);
 }
 
-.btn-nav:hover::after { width: 0; } /* Disable underline for button */
+.btn-nav:hover::after { width: 0; }
 .btn-nav:hover {
     background-color: var(--text-main);
     color: var(--bg-color);
 }
 
-/* Hamburger */
 .hamburger {
     display: none;
     cursor: pointer;
@@ -190,9 +178,6 @@ header.scrolled {
     transition: 0.4s;
 }
 
-/* ============================================
-   HERO SECTION
-   ============================================ */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -331,7 +316,6 @@ header.scrolled {
     border-color: white;
 }
 
-/* Hero Visual */
 .hero-visual {
     flex: 1;
     display: flex;
@@ -408,9 +392,6 @@ header.scrolled {
     100% { top: 25px; opacity: 0; }
 }
 
-/* ============================================
-   SECTIONS GENERAL
-   ============================================ */
 .section {
     padding: 120px 0;
     position: relative;
@@ -444,9 +425,6 @@ header.scrolled {
     color: white;
 }
 
-/* ============================================
-   PROJECTS (Modern Cards)
-   ============================================ */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -546,9 +524,6 @@ header.scrolled {
     font-family: var(--font-code);
 }
 
-/* ============================================
-   SKILLS (Clean Pills)
-   ============================================ */
 .skills-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -586,9 +561,6 @@ header.scrolled {
 .skill-pill:hover span { color: white; }
 .skill-pill span { font-weight: 500; color: var(--text-muted); }
 
-/* ============================================
-   ABOUT ME
-   ============================================ */
 .about-grid {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
@@ -637,9 +609,6 @@ header.scrolled {
 .stat-box .number { font-size: 2.5rem; font-weight: 800; color: white; display: block; }
 .stat-box .label { font-size: 0.9rem; color: var(--text-muted); }
 
-/* ============================================
-   CONTACT
-   ============================================ */
 .contact-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -666,7 +635,6 @@ header.scrolled {
     padding-bottom: 2px;
 }
 
-/* Form Glass */
 .glass-panel {
     background: var(--glass-bg);
     backdrop-filter: blur(20px);
@@ -712,9 +680,6 @@ header.scrolled {
 
 .btn-submit:hover { background: var(--primary); color: white; }
 
-/* ============================================
-   RESPONSIVE
-   ============================================ */
 @media (max-width: 968px) {
     .hero-container { flex-direction: column; text-align: center; padding-top: 80px; }
     .hero-content { align-items: center; }
@@ -725,7 +690,6 @@ header.scrolled {
     .hero-title { font-size: 3rem; }
     .contact-big-text { font-size: 2.5rem; }
     
-    /* Mobile Menu */
     .hamburger { display: block; z-index: 1001; }
     .nav-menu {
         position: fixed;
